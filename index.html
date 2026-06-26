@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dinuba High School — Home of the Emperors</title>
+<meta name="description" content="Dinuba High School — Home of the Emperors. Excellence, Maturity, Perseverance, Safety.">
+<link rel="icon" href="assets/img/helmet.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<!-- Prototype banner: jump to Part 2 -->
+<div style="background:#c9a24b;color:#0e1411;text-align:center;font:600 .8rem/1.4 Oswald,sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:.45rem 1rem">
+  Prototype · Part 1 = this public site &nbsp;·&nbsp; <a href="admin.html" style="text-decoration:underline;color:#0b4f27">Open Part 2 → Emperor CMS (backend)</a>
+</div>
+
+<!-- Top utility bar -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="t-links" id="topQuick"></div>
+    <div class="t-meta">
+      <a href="#contact">📍 490 W. Kamm Ave, Dinuba</a>
+      <a href="tel:5595957220">📞 559-595-7220</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-head">
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <img src="assets/img/logo-emperor.png" alt="Dinuba High School Emperors">
+      <span class="b-name"><strong>Dinuba High</strong><span>Home of the Emperors</span></span>
+    </a>
+    <ul class="menu">
+      <li><a href="#about">About <i class="caret">▾</i></a>
+        <div class="submenu">
+          <a href="#about">Administration</a><a href="page.html#staff">Staff Directory</a>
+          <a href="#bell">Bell Schedules</a><a href="#about">School Map</a><a href="#about">DUSD Calendar</a>
+        </div>
+      </li>
+      <li><a href="#departments">Departments <i class="caret">▾</i></a>
+        <div class="submenu" id="deptMenu"></div>
+      </li>
+      <li><a href="page.html#athletics">Athletics <i class="caret">▾</i></a>
+        <div class="submenu">
+          <a href="page.html#athletics">Entering Emperor Nation</a><a href="page.html#athletics">Sports Forms</a>
+          <a href="page.html#athletics">Athletic Schedules</a><a href="page.html#athletics">Coaches List</a>
+        </div>
+      </li>
+      <li><a href="page.html#counseling">Counseling <i class="caret">▾</i></a>
+        <div class="submenu">
+          <a href="page.html#counseling">College &amp; Career Center</a><a href="page.html#counseling">CTE &amp; Career Readiness</a>
+          <a href="page.html#counseling">Counseling Staff</a><a href="page.html#counseling">Social-Emotional</a>
+        </div>
+      </li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-outline" href="profile.html">Emperor ID</a>
+      <a class="btn btn-primary" href="#enroll">Enroll</a>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="scrim" id="scrim"></div>
+<nav class="drawer" id="drawer">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+    <strong style="font-family:Oswald;text-transform:uppercase;color:var(--green)">Menu</strong>
+    <button id="drawerClose" style="background:none;border:0;font-size:1.6rem;cursor:pointer">×</button>
+  </div>
+  <a href="#about">About</a><a href="#departments">Departments</a><a href="#athletics">Athletics</a>
+  <a href="#counseling">Counseling</a><a href="#news">News</a><a href="#events">Events</a><a href="#contact">Contact</a>
+  <a href="profile.html" class="dh">Emperor ID</a>
+  <a href="#enroll">Enroll Now</a>
+  <a href="admin.html">Emperor CMS →</a>
+</nav>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero" id="hero" style="padding:0">
+    <div id="heroSlides"></div>
+    <div class="wrap" id="heroContent"></div>
+    <div class="hero-dots" id="heroDots"></div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats"><div class="wrap" id="stats"></div></div>
+
+  <!-- Quick links -->
+  <section class="quick">
+    <div class="wrap">
+      <div class="sec-head"><p class="eyebrow">Fast Access</p><h2>Emperor Quick Links</h2></div>
+      <div class="qgrid" id="quickGrid"></div>
+    </div>
+  </section>
+
+  <!-- News -->
+  <section id="news">
+    <div class="wrap">
+      <div class="sec-head"><p class="eyebrow">Emperor Nation</p><h2>News &amp; Announcements</h2>
+        <p>The latest from across campus — athletics, academies, counseling, and safety.</p></div>
+      <div class="ngrid" id="newsGrid"></div>
+    </div>
+  </section>
+
+  <!-- Departments -->
+  <section class="depts" id="departments">
+    <div class="wrap">
+      <div class="sec-head"><p class="eyebrow">Academics</p><h2>Departments &amp; Academies</h2>
+        <p>Eighteen departments and two flagship four-year academies — Agriculture and Fire Fighting.</p></div>
+      <div class="dfilter" id="deptFilter"></div>
+      <div class="dgrid" id="deptGrid"></div>
+    </div>
+  </section>
+
+  <!-- Athletics -->
+  <section id="athletics">
+    <div class="wrap split">
+      <div class="media"><img src="assets/img/hero-sports.jpg" alt="Emperor athletics"></div>
+      <div>
+        <p class="eyebrow">Athletics</p>
+        <h2 style="font-size:clamp(1.7rem,3.4vw,2.6rem);text-transform:uppercase">Enter Emperor Nation</h2>
+        <p class="muted" id="athIntro"></p>
+        <div class="sportchips" id="sportChips"></div>
+        <div class="linkrow" id="athLinks"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Counseling -->
+  <section class="depts" id="counseling">
+    <div class="wrap">
+      <div class="sec-head"><p class="eyebrow">Counseling</p><h2>College, Career &amp; Wellness</h2>
+        <p id="counselIntro"></p></div>
+      <div class="cgrid" id="counselGrid"></div>
+    </div>
+  </section>
+
+  <!-- Events + Bell -->
+  <section id="events">
+    <div class="wrap twocol">
+      <div>
+        <div class="sec-head"><p class="eyebrow">Calendar</p><h2>Upcoming Events</h2></div>
+        <div class="evlist" id="eventsList"></div>
+      </div>
+      <div id="bell">
+        <div class="bell">
+          <h3>Bell Schedule</h3>
+          <div class="bn" id="bellNote"></div>
+          <div id="bellRows"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enroll CTA -->
+  <section class="cta-band" id="enroll">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--gold-bright)">Now Enrolling 2026–2027</p>
+      <h2>Become an Emperor</h2>
+      <p>New-student enrollment is open. Start the process, transfer records, and join a 123-year tradition of Excellence, Maturity, Perseverance, and Safety.</p>
+      <div class="btns">
+        <a class="btn btn-gold" href="#">Start Enrollment</a>
+        <a class="btn btn-ghost" href="#contact">Contact the Office</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="foot" id="contact">
+  <div class="wrap fgrid">
+    <div class="fbrand">
+      <img src="assets/img/logo-emperor.png" alt="Dinuba High School Emperors">
+      <p>Dinuba High School — Home of the Emperors. Excellence · Maturity · Perseverance · Safety.</p>
+      <div class="social">
+        <a href="https://www.facebook.com/DinubaHigh/" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+        <a href="https://www.youtube.com/@DETVEmps" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="#" title="ParentSquare" aria-label="ParentSquare" id="psSocial"></a>
+      </div>
+    </div>
+    <div>
+      <h4>School</h4>
+      <a href="#about">About Our School</a><a href="page.html#staff">Staff Directory</a>
+      <a href="#bell">Bell Schedules</a><a href="#departments">Departments</a><a href="page.html#athletics">Athletics</a>
+    </div>
+    <div>
+      <h4>Families</h4>
+      <a href="#enroll">Enrollment</a><a href="#news">Daily Bulletin</a>
+      <a href="#counseling">Counseling</a><a href="#">Lunch Menus</a><a href="#">Parent Links</a>
+    </div>
+    <div>
+      <h4>Visit</h4>
+      <a href="#contact">490 W. Kamm Avenue</a><a href="#contact">Dinuba, CA 93618</a>
+      <a href="tel:5595957220">559-595-7220</a><a href="#">Fax 559-596-2019</a>
+    </div>
+  </div>
+  <div class="wrap subfoot">
+    <span>© 2026 Dinuba High School · Dinuba Unified School District. Privacy · Accessibility · Site Map</span>
+    <a class="smbuilt" href="https://sharemeister.ai" target="_blank" rel="noopener">
+      <span class="spark"></span> Built with <strong style="color:#fff">&nbsp;Sharemeister.ai</strong>
+    </a>
+  </div>
+</footer>
+
+<!-- Emperor AI assistant -->
+<button class="eai-fab" id="eaiFab" aria-label="Ask Emperor AI">
+  <span class="ava"><img src="assets/img/helmet.png" alt=""></span>
+  Ask Emperor AI<span class="pulse"></span>
+</button>
+<section class="eai-panel" id="eaiPanel" aria-live="polite">
+  <div class="eai-head">
+    <span class="ava"><img src="assets/img/helmet.png" alt=""></span>
+    <div class="t"><b>Emperor AI</b><span>Your campus guide · online</span></div>
+    <button class="x" id="eaiClose">×</button>
+  </div>
+  <div class="eai-body" id="eaiBody"></div>
+  <div class="eai-chips" id="eaiChips"></div>
+  <div class="eai-input">
+    <input id="eaiInput" placeholder="Ask about enrollment, sports, schedules…" autocomplete="off">
+    <button id="eaiSend">➤</button>
+  </div>
+  <div class="eai-foot">Powered by <a href="https://sharemeister.ai" target="_blank" rel="noopener">Sharemeister.ai</a> · trained on DHS content</div>
+</section>
+
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/emperor-ai.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

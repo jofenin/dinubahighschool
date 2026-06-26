@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Emperor CMS — Dinuba High School</title>
+<link rel="icon" href="assets/img/helmet.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+<!-- Sidebar -->
+<aside class="sb">
+  <div class="sb-brand">
+    <img src="assets/img/logo-emperor.png" alt="">
+    <div><b>Emperor CMS</b><br><span>Dinuba High School</span></div>
+  </div>
+  <nav class="sb-nav" id="sbNav">
+    <div class="sb-sec sa-only" id="saSection">Super Admin · District</div>
+    <a data-v="district" class="sa-only"><span class="ic">🏫</span> District &amp; Schools</a>
+    <div class="sb-sec">Manage</div>
+    <a data-v="dash" class="on"><span class="ic">▣</span> Dashboard</a>
+    <a data-v="hero"><span class="ic">🖼️</span> Hero Slides</a>
+    <a data-v="news"><span class="ic">📣</span> News &amp; Bulletin</a>
+    <a data-v="depts"><span class="ic">📚</span> Departments</a>
+    <a data-v="events"><span class="ic">📅</span> Events</a>
+    <a data-v="quick"><span class="ic">🔗</span> Quick Links</a>
+    <a data-v="staff"><span class="ic">👤</span> Staff Directory</a>
+    <a data-v="emperorai"><span class="ic">⚔️</span> Emperor AI</a>
+    <div class="sb-sec">System</div>
+    <a data-v="roles"><span class="ic">🔐</span> Roles &amp; Workflow</a>
+    <a data-v="integrations"><span class="ic">🔌</span> Integrations</a>
+    <a data-v="arch"><span class="ic">🧩</span> Architecture</a>
+  </nav>
+  <div class="sb-foot">
+    Signed in as <b id="whoami">Super Admin</b><br>
+    <a href="https://sharemeister.ai" target="_blank">Built with Sharemeister.ai</a>
+  </div>
+</aside>
+
+<!-- Main -->
+<div class="main">
+  <div class="top">
+    <h1 id="viewTitle">Dashboard</h1>
+    <span class="pill" id="dirtyPill" style="display:none">Unsaved changes</span>
+    <div class="sp"></div>
+    <div class="roleswitch"><span>Viewing as</span>
+      <select id="roleSwitch">
+        <option value="superadmin">Super Admin</option>
+        <option value="siteadmin">Site Admin</option>
+        <option value="editor">Editor</option>
+        <option value="deptlead">Department Lead</option>
+      </select></div>
+    <a class="btn btn-ghost btn-sm" href="index.html" target="_blank">View live site ↗</a>
+    <button class="btn btn-ghost btn-sm" id="resetBtn">Reset</button>
+    <button class="btn btn-green" id="publishBtn">Publish</button>
+  </div>
+
+  <div class="content">
+
+    <!-- District (Super Admin only) -->
+    <section class="view" data-view="district">
+      <div class="note">🏫 <b>Super Admin sees everything.</b> Full visibility across the whole district — every campus, all content, users, integrations, and audit. Site Admins and below are scoped to their own school; Department Leads only to their department. Switch the <b>“Viewing as”</b> role up top to see scoping in action.</div>
+      <div class="metrics" id="districtMetrics"></div>
+      <div class="card">
+        <div class="card-head"><div><h2>Dinuba Unified — All Campuses</h2><div class="sub">Every school running on the platform</div></div></div>
+        <div class="rows" id="schoolRows"></div>
+      </div>
+    </section>
+
+    <!-- Dashboard -->
+    <section class="view on" data-view="dash">
+      <div class="note">⚙️ <b>How this works:</b> Every panel here edits the same content model the public site renders from. Hit <b>Publish</b> and open the live site — your change is there. This is the CRM layer: the people running the school manage the front-end without touching code.</div>
+      <div class="metrics" id="dashMetrics"></div>
+      <div class="card">
+        <div class="card-head"><div><h2>Recent activity</h2><div class="sub">Audit trail of content changes</div></div></div>
+        <div class="rows" id="activity"></div>
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="view" data-view="hero">
+      <div class="card">
+        <div class="card-head"><div><h2>Hero Slides</h2><div class="sub">The rotating banner on the homepage</div></div><div class="sp"></div>
+          <button class="btn btn-gold btn-sm" data-add="hero">+ Add slide</button></div>
+        <div class="rows" id="heroRows"></div>
+      </div>
+    </section>
+
+    <!-- News -->
+    <section class="view" data-view="news">
+      <div class="card">
+        <div class="card-head"><div><h2>News &amp; Bulletin</h2><div class="sub">Announcements shown on the homepage</div></div><div class="sp"></div>
+          <button class="btn btn-gold btn-sm" data-add="news">+ Add story</button></div>
+        <div class="rows" id="newsRows"></div>
+      </div>
+    </section>
+
+    <!-- Departments -->
+    <section class="view" data-view="depts">
+      <div class="card">
+        <div class="card-head"><div><h2>Departments &amp; Academies</h2><div class="sub">18 departments · 2 four-year academies</div></div><div class="sp"></div>
+          <button class="btn btn-gold btn-sm" data-add="depts">+ Add department</button></div>
+        <div class="rows" id="deptRows"></div>
+      </div>
+    </section>
+
+    <!-- Events -->
+    <section class="view" data-view="events">
+      <div class="card">
+        <div class="card-head"><div><h2>Events</h2><div class="sub">Calendar items on the homepage</div></div><div class="sp"></div>
+          <button class="btn btn-gold btn-sm" data-add="events">+ Add event</button></div>
+        <div class="rows" id="eventRows"></div>
+      </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="view" data-view="quick">
+      <div class="card">
+        <div class="card-head"><div><h2>Quick Links</h2><div class="sub">Top utility bar + quick-access grid</div></div><div class="sp"></div>
+          <button class="btn btn-gold btn-sm" data-add="quick">+ Add link</button></div>
+        <div class="rows" id="quickRows"></div>
+      </div>
+    </section>
+
+    <!-- Staff -->
+    <section class="view" data-view="staff">
+      <div class="card">
+        <div class="card-head"><div><h2>Staff Directory</h2><div class="sub">Administration &amp; contacts</div></div><div class="sp"></div>
+          <button class="btn btn-gold btn-sm" data-add="staff">+ Add staff</button></div>
+        <div class="rows" id="staffRows"></div>
+      </div>
+    </section>
+
+    <!-- Emperor AI -->
+    <section class="view" data-view="emperorai">
+      <div class="note">⚔️ The <b>Emperor AI</b> character answers families and students from <i>this</i> content. Because the assistant is grounded in the CMS, every edit you publish also updates what Emperor AI knows — no separate training step.</div>
+      <div class="card">
+        <div class="card-head"><div><h2>Emperor AI — Persona</h2><div class="sub">Voice &amp; behavior of the school's assistant</div></div></div>
+        <div class="field"><label>Display name</label><input value="Emperor AI" readonly></div>
+        <div class="field"><label>Tagline</label><input value="Your campus guide · online" readonly></div>
+        <div class="field"><label>System persona</label><textarea readonly>Encouraging, knowledgeable campus guide for Dinuba High. Speaks in the Emperors' voice — Excellence, Maturity, Perseverance, Safety. Answers ONLY from published DHS content; routes anything else to the front office (559-595-7220). Never invents policy.</textarea></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div><h2>Knowledge sources</h2><div class="sub">What the assistant is grounded in</div></div></div>
+        <div class="rows" id="aiSources"></div>
+      </div>
+    </section>
+
+    <!-- Roles -->
+    <section class="view" data-view="roles">
+      <div class="note">🔐 <b>Security note:</b> the “Viewing as” switcher and these scopes are the <i>convenience</i> layer. The real boundary is server-side — every API request is re-checked against the caller’s role + scope (school, department), so a lower role can’t reach other data even by calling the API directly. See <b>Architecture → Server-side authorization</b>.</div>
+      <div class="card">
+        <div class="card-head"><div><h2>Roles &amp; Permissions</h2><div class="sub">Who can edit what — the CRM access model</div></div></div>
+        <div class="rows" id="roleRows"></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div><h2>Publishing Workflow</h2><div class="sub">Draft → review → publish, with audit trail</div></div></div>
+        <div class="roleflow">
+          <span class="node">✍️ Contributor drafts</span><span class="arr">→</span>
+          <span class="node">👁️ Editor reviews</span><span class="arr">→</span>
+          <span class="node">✅ Admin publishes</span><span class="arr">→</span>
+          <span class="node">🌐 Live site + Emperor AI update</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integrations -->
+    <section class="view" data-view="integrations">
+      <div class="card">
+        <div class="card-head"><div><h2>Integrations</h2><div class="sub">The systems a school site must connect to</div></div></div>
+        <div class="arch" id="integrationGrid"></div>
+      </div>
+    </section>
+
+    <!-- Architecture -->
+    <section class="view" data-view="arch">
+      <div class="note">🧩 <b>The two-part setup.</b> Part 1 is the public site you can open in a tab. Part 2 is this CMS. They share one content model — in production a database behind a headless API. This panel documents the full backend the school would run.</div>
+      <div class="card">
+        <div class="card-head"><div><h2>System Architecture</h2><div class="sub">What ships when this goes to production</div></div></div>
+        <div class="arch" id="archGrid"></div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<!-- Edit modal -->
+<div class="modal-scrim" id="modalScrim">
+  <div class="modal">
+    <h3 id="modalTitle">Edit</h3>
+    <div id="modalForm"></div>
+    <div class="modal-acts">
+      <button class="btn btn-ghost" id="modalCancel">Cancel</button>
+      <button class="btn btn-green" id="modalSave">Save</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/admin.js"></script>
+</body>
+</html>

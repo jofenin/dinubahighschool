@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dinuba High School — Emperors</title>
+<link rel="icon" href="assets/img/helmet.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<div style="background:#c9a24b;color:#0e1411;text-align:center;font:600 .8rem/1.4 Oswald,sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:.45rem 1rem">
+  Prototype · Interior page (Part 1 deep layer) &nbsp;·&nbsp; <a href="admin.html" style="text-decoration:underline;color:#0b4f27">Manage in Emperor CMS →</a>
+</div>
+
+<header class="site-head">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo-emperor.png" alt="Dinuba High School Emperors">
+      <span class="b-name"><strong>Dinuba High</strong><span>Home of the Emperors</span></span>
+    </a>
+    <ul class="menu">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#departments">Departments</a></li>
+      <li><a href="page.html#athletics">Athletics</a></li>
+      <li><a href="page.html#counseling">Counseling</a></li>
+      <li><a href="page.html#staff">Staff</a></li>
+      <li><a href="index.html#news">News</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta"><a class="btn btn-outline" href="profile.html">Emperor ID</a><a class="btn btn-primary" href="index.html#enroll">Enroll</a></div>
+  </div>
+</header>
+
+<main id="pageMount"></main>
+
+<footer class="foot">
+  <div class="wrap subfoot" style="border:0;padding-top:40px">
+    <span>© 2026 Dinuba High School · Dinuba Unified School District</span>
+    <a class="smbuilt" href="https://sharemeister.ai" target="_blank" rel="noopener">
+      <span class="spark"></span> Built with <strong style="color:#fff">&nbsp;Sharemeister.ai</strong>
+    </a>
+  </div>
+</footer>
+
+<!-- Emperor AI -->
+<button class="eai-fab" id="eaiFab" aria-label="Ask Emperor AI">
+  <span class="ava"><img src="assets/img/helmet.png" alt=""></span>
+  Ask Emperor AI<span class="pulse"></span>
+</button>
+<section class="eai-panel" id="eaiPanel" aria-live="polite">
+  <div class="eai-head">
+    <span class="ava"><img src="assets/img/helmet.png" alt=""></span>
+    <div class="t"><b>Emperor AI</b><span>Your campus guide · online</span></div>
+    <button class="x" id="eaiClose">×</button>
+  </div>
+  <div class="eai-body" id="eaiBody"></div>
+  <div class="eai-chips" id="eaiChips"></div>
+  <div class="eai-input">
+    <input id="eaiInput" placeholder="Ask about enrollment, sports, schedules…" autocomplete="off">
+    <button id="eaiSend">➤</button>
+  </div>
+  <div class="eai-foot">Powered by <a href="https://sharemeister.ai" target="_blank" rel="noopener">Sharemeister.ai</a> · trained on DHS content</div>
+</section>
+
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/emperor-ai.js"></script>
+<script src="assets/js/page.js"></script>
+</body>
+</html>
